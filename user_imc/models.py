@@ -15,7 +15,7 @@ class Usuarios(models.Model):
     def save(self, *args, **kwargs):
         # Calcular el IMC 
         if self.altura and self.peso:
-            self.imc = self.peso/(self.altura ** 2)
+            self.imc = round(self.peso/(self.altura ** 2), 2)
             self.estado = self.get_estado_imc()
             
         else:
@@ -31,3 +31,4 @@ class Usuarios(models.Model):
             self.estado = 'normal'
         else:
             self.estado = 'sobrepeso'
+
