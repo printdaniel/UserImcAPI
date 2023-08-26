@@ -1,4 +1,4 @@
-from rest_framework.generics import RetrieveAPIView
+from rest_framework.generics import RetrieveAPIView, ListAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView 
 from .serializer import UsuariosSerializer
@@ -20,3 +20,8 @@ class UsuariosRetrieveByNameView(RetrieveAPIView):
         nombre = self.kwargs['nombre']  # Obtén el nombre de la URL
         usuario = Usuarios.objects.get(username=nombre)
         return usuario
+
+
+class UsuariosListView(ListAPIView):
+    queryset = Usuarios.objects.all()
+    serializer_class = UsuariosSerializer
