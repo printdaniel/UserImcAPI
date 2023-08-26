@@ -21,7 +21,15 @@ class UsuariosRetrieveByNameView(RetrieveAPIView):
         usuario = Usuarios.objects.get(username=nombre)
         return usuario
 
-
 class UsuariosListView(ListAPIView):
     queryset = Usuarios.objects.all()
     serializer_class = UsuariosSerializer
+
+class UsuariosRetrieveByIDView(RetrieveAPIView):
+    serializer_class = UsuariosSerializer
+
+    def get_object(self):
+        id = self.kwargs['id']  # Obtén el id de la URL
+        print(id)
+        usuario = Usuarios.objects.get(id=id)
+        return usuario
