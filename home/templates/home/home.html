@@ -1,43 +1,103 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mi Página de Prueba</title>
+    <title>API Registro IMC</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'estilos.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a mi Página de Prueba</h1>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Acerca de</a></li>
-            <li><a href="#">Servicios</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ul>
-    </nav>
-    
-    <section>
-        <h2>Acerca de Nosotros</h2>
-        <p>Somos una empresa dedicada a...</p>
-    </section>
-    
-    <section>
-        <h2>Nuestros Servicios</h2>
-        <ul>
-            <li>Servicio 1</li>
-            <li>Servicio 2</li>
-            <li>Servicio 3</li>
-        </ul>
-    </section>
-    
-    <section>
-        <h2>Contacto</h2>
-        <p>Puede contactarnos en: <a href="mailto:info@example.com">info@example.com</a></p>
-    </section>
-    
+</head>
+
+<body style="background-color:#fbbe9a">
+
+      <div class="container mt-5" >
+        <div class="jumbotron text-center " style="background-color: #faf5c8">
+            <h1 class="display-4">¡Bienvenido a API IMC!</h1>
+            <p class="lead">Registra tus datos para obtener tu IMC</p>
+            <hr class="my-4 ">
+                <p class="text-danger-emphasis"> La API de Registro y Cálculo de Índice de Masa Corporal (IMC) 
+                es una potente herramienta diseñada para facilitar el seguimiento 
+                de la salud y el bienestar de los usuarios. Permite registrar datos 
+                vitales como el nombre del usuario, su peso y su altura, y luego 
+                realiza el cálculo del IMC para brindar una medida objetiva de la 
+                composición corporal.
+                </p>
+        </div>
+    </div>
+
+
+    <div class="container-md bg-info-subtle">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Registro de datos</h5>
+        <p class="card-text">
+          <strong>Nombre:</strong> {{ nombre }}
+          <br>
+          <strong>Altura:</strong> {{ altura }} metros
+          <br>
+          <strong>Peso:</strong> {{ peso }} kilogramos
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <br/>
+   <div class="container-md bg-info p-1 rounded">
+    <div class="border border-danger p-2">
+        <pre class="bg-danger p-2 rounded"><code>
+<strong>Endpoint:</strong>
+<strong>POST</strong> api/registrar-usuario/
+
+    Content-Type: application/json
+    {
+    "nombre": "Ejemplo Usuario",
+    "altura": 1.75,
+    "peso": 70.5
+    }
+        </code></pre>
+    </div>
+</div>
+
+<br/>
+    <div class="container-md bg-info-subtle">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Endpoint para Obtener Usuario por Nombre</h5>
+        <p class="card-text">
+         El endpoint para obtener un usuario por su nombre proporciona una 
+         forma eficiente de recuperar los detalles de un usuario específico 
+         utilizando su nombre como identificador. Esta función es útil para acceder a 
+         la información de salud de un usuario en particular y realizar consultas personalizadas.
+        </p>
+      </div>
+    </div>
+    </div>
+
+    <br/>
+   <div class="container-md bg-info p-1 rounded">
+    <div class="border border-danger p-2">
+        <pre class="bg-danger p-2 rounded"><code>
+<strong>Endpoint:</strong>
+<strong>GET</strong> api/usuarios/{Nombre}
+
+Ejemplo de Respuesta Exitosa:
+
+{
+    "id": 123,
+    "nombre": "Ejemplo Usuario",
+    "altura": 1.75,
+    "peso": 70.5,
+    "imc": 23.0
+}
+       </code></pre>
+    </div>
+</div>
+
+
     <footer>
         <p>&copy; 2023 Mi Página de Prueba. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
+

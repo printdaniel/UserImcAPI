@@ -1,4 +1,4 @@
-from rest_framework.generics import RetrieveAPIView, ListAPIView
+from rest_framework.generics import RetrieveAPIView, ListAPIView, UpdateAPIView
 from rest_framework.response import Response
 from rest_framework.views import APIView 
 from .serializer import UsuariosSerializer
@@ -50,3 +50,4 @@ class EstadisticasView(APIView):
         }
 
         return Response(estadisticas)
+
