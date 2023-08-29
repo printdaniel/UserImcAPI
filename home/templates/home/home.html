@@ -27,6 +27,8 @@
     </div>
 
 
+-- Registrar datos
+
     <div class="container-md bg-info-subtle">
     <div class="card">
       <div class="card-body">
@@ -59,6 +61,7 @@
     </div>
 </div>
 
+-- Obtener registro por nombre
 <br/>
     <div class="container-md bg-info-subtle">
     <div class="card">
@@ -92,7 +95,89 @@ Ejemplo de Respuesta Exitosa:
 }
        </code></pre>
     </div>
+
+   </div>
+
+
+-- todos los registros
+<br/>
+    <div class="container-md bg-info-subtle">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Endpoint para Obtener Todos los Registros</h5>
+        <p class="card-text">
+El endpoint para obtener todos los registros de usuarios brinda una vista 
+integral de todos los perfiles de usuarios almacenados en el sistema. Esta 
+función es valiosa para el análisis agregado y la revisión general de la 
+información de salud de los usuarios.
+      </div>
+    </div>
+    </div>
+
+    <br/>
+   <div class="container-md bg-info p-1 rounded">
+    <div class="border border-danger p-2">
+        <pre class="bg-danger p-2 rounded"><code>
+<strong>Endpoint:</strong>
+<strong>GET</strong> api/usuarios/
+
+Ejemplo de Respuesta Exitosa:
+[
+    {
+        "id": 1,
+        "nombre": "Usuario1",
+        "altura": 1.70,
+        "peso": 65.5,
+        "imc": 22.6
+    },
+    {
+        "id": 2,
+        "nombre": "Usuario2",
+        "altura": 1.65,
+        "peso": 70.0,
+        "imc": 25.7
+    },
+]       </code></pre>
+    </div>
 </div>
+
+
+
+-- Los usiuarios por id
+<br/>
+    <div class="container-md bg-info-subtle">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Endpoint para Obtener los Registros por ID</h5>
+        <p class="card-text">
+El endpoint para obtener un usuario por su ID proporciona una manera eficaz 
+de acceder a los detalles de un usuario específico utilizando su identificador 
+único. Esta función es útil para obtener información detallada 
+sobre un usuario en particular y realizar operaciones personalizadas.
+      </div>
+    </div>
+    </div>
+
+    <br/>
+   <div class="container-md bg-info p-1 rounded">
+    <div class="border border-danger p-2">
+        <pre class="bg-danger p-2 rounded"><code>
+<strong>Endpoint:</strong>
+<strong>GET</strong> api/usuarios/{id}
+
+Ejemplo de Respuesta Exitosa:
+
+{
+    "id": 123,
+    "nombre": "Ejemplo Usuario",
+    "altura": 1.75,
+    "peso": 70.5,
+    "imc": 23.0
+}
+       </code></pre>
+    </div>
+</div>
+
 
 
     <footer>
