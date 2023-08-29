@@ -27,7 +27,6 @@
     </div>
 
 
--- Registrar datos
 
     <div class="container-md bg-info-subtle">
     <div class="card">
@@ -61,7 +60,6 @@
     </div>
 </div>
 
--- Obtener registro por nombre
 <br/>
     <div class="container-md bg-info-subtle">
     <div class="card">
@@ -99,7 +97,6 @@ Ejemplo de Respuesta Exitosa:
    </div>
 
 
--- todos los registros
 <br/>
     <div class="container-md bg-info-subtle">
     <div class="card">
@@ -143,7 +140,6 @@ Ejemplo de Respuesta Exitosa:
 
 
 
--- Los usiuarios por id
 <br/>
     <div class="container-md bg-info-subtle">
     <div class="card">
@@ -180,9 +176,56 @@ Ejemplo de Respuesta Exitosa:
 
 
 
-    <footer>
-        <p>&copy; 2023 Mi Página de Prueba. Todos los derechos reservados.</p>
-    </footer>
+
+<br/>
+    <div class="container-md bg-info-subtle">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Endpoint para Obtener la Estadística de los Regístros</h5>
+        <p class="card-text">
+
+El endpoint para obtener estadísticas de usuarios proporciona una visión 
+general del estado de los usuarios registrados en la plataforma. Esta función 
+ofrece información clave, como el número total de usuarios registrados, así 
+como promedios de IMC, peso y altura.
+    </div>
+    </div>
+
+    <br/>
+   <div class="container-md bg-info p-1 rounded">
+    <div class="border border-danger p-2">
+        <pre class="bg-danger p-2 rounded"><code>
+<strong>Endpoint:</strong>
+<strong>GET</strong> api/estadisticas/
+
+Ejemplo de Respuesta Exitosa:
+{
+    "total_usuarios": 150,
+    "promedio_imc": 24.5,
+    "promedio_peso": 70.2,
+    "promedio_altura": 1.75
+}
+       </code></pre>
+    </div>
+</div>
+
+
+
+<footer>
+    <p>&copy; <span id="current-year"></span> Mi Página de Prueba. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    // Obtener el elemento del año actual
+    const currentYearElement = document.getElementById("current-year");
+    
+    // Obtener el año actual
+    const currentYear = new Date().getFullYear();
+    
+    // Establecer el año actual en el elemento
+    currentYearElement.textContent = currentYear;
+</script>
+
 </body>
 </html>
 
